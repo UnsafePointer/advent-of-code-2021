@@ -141,6 +141,14 @@ optional = false
 python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*"
 
 [[package]]
+name = "py-spy"
+version = "0.3.11"
+description = "Sampling profiler for Python programs"
+category = "main"
+optional = false
+python-versions = "*"
+
+[[package]]
 name = "pyparsing"
 version = "3.0.6"
 description = "Python parsing module"
@@ -216,7 +224,7 @@ python-versions = "*"
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.8"
-content-hash = "04f9d39bde6df3f0d7a6c9de7c76885a7ca387bda0998986d60bee69305db8ec"
+content-hash = "2347171b9faf8e82a93786d24e8d9d088adc8305c60c00b118adeab95ff666ca"
 
 [metadata.files]
 appdirs = [
@@ -290,6 +298,16 @@ pluggy = [
 py = [
     {file = "py-1.11.0-py2.py3-none-any.whl", hash = "sha256:607c53218732647dff4acdfcd50cb62615cedf612e72d1724fb1a0cc6405b378"},
     {file = "py-1.11.0.tar.gz", hash = "sha256:51c75c4126074b472f746a24399ad32f6053d1b34b68d2fa41e558e6f4a98719"},
+]
+py-spy = [
+    {file = "py_spy-0.3.11-py2.py3-none-macosx_10_7_x86_64.whl", hash = "sha256:5dbec592e43bb10ceff887f2cf889e2b45d1dd999363c9241637428599eeb358"},
+    {file = "py_spy-0.3.11-py2.py3-none-macosx_10_9_x86_64.macosx_11_0_arm64.macosx_10_9_universal2.whl", hash = "sha256:249af0490f04aea58606fa18c82ea33a25a3894e32ba019367b62a4b8d54f5a6"},
+    {file = "py_spy-0.3.11-py2.py3-none-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:3fbd42d211fe5c4cdf650b194940c1f053fe30b5fbba09e933432535a13867a5"},
+    {file = "py_spy-0.3.11-py2.py3-none-manylinux_2_17_armv7l.manylinux2014_armv7l.whl", hash = "sha256:e35a4720859dfd86238df5ac17d63d1f08901d40953ff5eac0bda5afdf744b22"},
+    {file = "py_spy-0.3.11-py2.py3-none-manylinux_2_5_i686.manylinux1_i686.whl", hash = "sha256:3b80db1630f5ca1314b72e7f739c00329bc44a8fd06f44a2d708267c248fce2f"},
+    {file = "py_spy-0.3.11-py2.py3-none-manylinux_2_5_x86_64.manylinux1_x86_64.whl", hash = "sha256:6f7ba3ae9f6a61ca2e10367427ee8d39d46880b09a78a90e6899b02601187c8d"},
+    {file = "py_spy-0.3.11-py2.py3-none-win_amd64.whl", hash = "sha256:f014b383a14e5d881710ab930c435cbe76b8af40855bbc09775b70a0254b600a"},
+    {file = "py_spy-0.3.11.tar.gz", hash = "sha256:3115c6e45cdab657f81c886f8b1664e7e2208b775396031eeea60e4d16fc861d"},
 ]
 pyparsing = [
     {file = "pyparsing-3.0.6-py3-none-any.whl", hash = "sha256:04ff808a5b90911829c55c4e26f75fa5ca8a2f5f36aa3a51f68e27033341d3e4"},
