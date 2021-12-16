@@ -1,8 +1,9 @@
 from __future__ import annotations
 from dataclasses import dataclass, field
-from typing import Optional, Tuple, Dict, List, Set
+from typing import Tuple, Dict, List, Set
 from sys import maxsize
 from collections import defaultdict
+from heapq import heappush, heappop
 
 
 @dataclass
@@ -16,6 +17,9 @@ class Node:
 
     def __repr__(self) -> str:
         return str(self.identifier)
+
+    def __lt__(self, other: Node) -> bool:
+        return self.identifier < other.identifier
 
 
 def solve() -> int:
@@ -93,24 +97,21 @@ def solve() -> int:
     visited: Set[Node] = set()
     distances: Dict[Node, int] = defaultdict(lambda: maxsize)
     distances[nodes[(0, 0)]] = 0
-    current_node = nodes[(0, 0)]
-    while len(visited) < len(nodes):
+
+    priority_queue: List[Tuple[int, Node]] = []
+    heappush(priority_queue, (0, nodes[(0, 0)]))
+    while priority_queue:
+        while True:
+            (_, current_node) = heappop(priority_queue)
+            if current_node not in visited:
+                break
+
         for node in current_node.adjacent_nodes:
-            distances[node] = min(
-                distances[node], distances[current_node] + node.distance
-            )
-        min_distance = maxsize
-        min_distance_node: Node
+            adjacent_node_distance = distances[current_node] + node.distance
+            if adjacent_node_distance < distances[node]:
+                distances[node] = adjacent_node_distance
+                heappush(priority_queue, (adjacent_node_distance, node))
         visited.add(current_node)
-        if current_node.identifier == (len(data) - 1, len(data) - 1):
-            return distances[current_node]
-        else:
-            del distances[current_node]
-        for node, distance in distances.items():
-            if distance < min_distance and node not in visited:
-                min_distance_node = node
-                min_distance = distance
-        current_node = min_distance_node
 
     return distances[nodes[(len(data) - 1, len(data) - 1)]]
 

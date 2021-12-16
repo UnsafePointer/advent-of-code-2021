@@ -1,6 +1,6 @@
 from __future__ import annotations
 from dataclasses import dataclass, field
-from typing import Optional, Tuple, Dict, List, Set
+from typing import Tuple, Dict, List, Set
 from sys import maxsize
 from collections import defaultdict
 
